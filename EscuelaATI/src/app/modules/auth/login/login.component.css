@@ -1,0 +1,55 @@
+.loginBox{
+    height: 65vh;
+    width: 40vw;
+    margin-top: 12vh;
+    border-style: solid;
+    border-radius: 9vh;
+    border-color: black;
+    border-width: 3px;
+    margin-left:auto;
+    margin-right: auto;
+    background-color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 7vh;
+    padding-bottom:7vh;
+}
+.title{
+    font-size:6vh;
+    padding-bottom: 7vh;
+}
+.inputRow{
+    width: 90%;
+    font-size: 4vh;
+
+}
+.formSpace{
+    height: 70%;
+  
+
+}
+.inputField{
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3vh;
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 2px;
+    margin-right: 4vw;
+
+}
+.buttonDiv{
+  margin-top: 10vh;
+
+ 
+}
+.loginButton{
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+    width: 100%;
+    font-size: 3vh;
+    font-weight: bold;
+    background-color: red;
+
+}

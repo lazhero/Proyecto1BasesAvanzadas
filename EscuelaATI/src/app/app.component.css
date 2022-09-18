@@ -1,0 +1,21 @@
+
+
+
+.headerBar{
+    background-color: red;
+    height: 9vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+.iconBar{
+    padding-left: 2vw;
+}
+ .icon{
+    padding-top: 1.9vh;
+    padding-left: 1vw;
+    font-size:5vh;
+    height: 100%;
+    width: 100%;
+ }

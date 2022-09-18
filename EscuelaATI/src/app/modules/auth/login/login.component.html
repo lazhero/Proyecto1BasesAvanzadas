@@ -1,0 +1,35 @@
+
+<div class="loginBox" fxLayout="column" fxLayoutAlign="space-evenly center">
+    <label class="title">Inicie Sesión</label>
+    <form fxLayout="column" fxLayoutAlign="space-around center" class="formSpace" [formGroup]="loginForm">
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="inputRow">
+            <div fxFlex="30" style="text-align:center">
+                <label>Correo</label>
+            </div>
+            <div fxFlex="15"></div>
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex="55">
+                <input type="email" class="inputField" formControlName="email">
+    
+            </div>
+    
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="inputRow">
+            <div fxFlex="30" style="text-align:center">
+                <label>Contraseña</label>
+            </div>
+            <div fxFlex="15"></div>
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex="55">
+                <input type="password" class="inputField" formControlName="password">
+    
+            </div>
+    
+        </div>
+        
+    </form>
+    <div fxLayout="row" fxLayoutAlign="space-around center" class="buttonDiv">
+        <button mat-raised-button color="warn" class="loginButton" (click)="log()">Inicie Sesion</button>
+
+    </div>
+    
+
+</div>
