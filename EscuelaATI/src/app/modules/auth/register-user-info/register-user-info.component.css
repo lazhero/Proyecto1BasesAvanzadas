@@ -43,7 +43,7 @@
 .row75{
     width: 75%;
 }
-input{
+input,select{
     width: 90%;
     border-radius: 12px;
     text-align:center;

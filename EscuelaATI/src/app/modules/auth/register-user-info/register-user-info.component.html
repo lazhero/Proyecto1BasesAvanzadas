@@ -1,4 +1,4 @@
-<form class="mainForm" fxLayout="column" fxLayoutAlign="space-around center">
+<form class="mainForm" fxLayout="column" fxLayoutAlign="space-around center" [formGroup]="userInfoForm">
     <div class="row">
         <label class="title">Datos Usuario</label>
     </div>
@@ -9,8 +9,8 @@
         </div>
         <div class="row75">
             <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
-                <input>
-                <label class="warning">Correc</label>
+                <input formControlName="name">
+                <label  class="warning" *ngIf="userInfoForm.get('name').hasError('required')">El nombre es necesario</label>
             </div>
             
         </div>
@@ -18,14 +18,41 @@
     </div>
     <div class="row">
         <div class="row25">
-            <label>Hola</label>
+            <label>Correo</label>
         </div>
         <div class="row75">
             <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
-                <input>
-                <label class="warning">Correc</label>
+                <input formControlName="email">
+                <label class="warning" *ngIf="userInfoForm.get('email').hasError('required')">El correo no puede ser vacio</label>
+                <label class="warning" *ngIf="userInfoForm.get('email').hasError('email') &&  !userInfoForm.get('email').hasError('required')">No cumple con formato correo</label>
             </div>
         </div>
 
     </div>
+    <div class="row">
+        <div class="row25">
+            <label>Contraseña</label>
+        </div>
+        <div class="row75">
+            <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
+                <input type="password" formControlName="password">
+                <label class="warning" *ngIf="userInfoForm.get('password').hasError('required')">La contraseña no puede ser vacia</label>
+                <label class="warning" *ngIf="userInfoForm.get('password').hasError('minlength') && !userInfoForm.get('password').hasError('required')">La contraseña debe tener al menos 8 caracters</label>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="row25">
+            <label>Sesión</label>
+        </div>
+        <div class="row75">
+            <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
+                <select formControlName="class"></select>
+                
+            </div>
+        </div>
+
+    </div>
+    
 </form>

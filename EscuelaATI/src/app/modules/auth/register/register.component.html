@@ -1,7 +1,7 @@
-<mat-stepper class="squareBoxDiv" linear="true" #stepper>
-    <mat-step>
-        <app-register-user-info>
-            
+<mat-stepper class="squareBoxDiv" [linear]="true" #stepper>
+    <mat-step [stepControl]="stepOne()">
+        <app-register-user-info #info>
+
         </app-register-user-info>
     </mat-step>
     <mat-step>
@@ -10,3 +10,7 @@
    
 
 </mat-stepper>
+<div class="buttonsDiv">
+    <button class="stepperButton" (click)="goBack()" [disabled]="isFirst()">Atras</button>
+    <button class="stepperButton" (click)="goForward()" [disabled]="isLast()">Adelante</button>
+</div>
