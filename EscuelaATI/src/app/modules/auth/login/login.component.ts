@@ -23,7 +23,16 @@ export class LoginComponent implements OnInit {
 
   log(){
     if(!this.loginForm.valid){
-      this.alerts.showError('Error','Datos Incorrectos')
+      if(!this.loginForm.controls['email'].valid){
+        this.alerts.showError('Error','Email Invalido')
+      }
+      else if (!this.loginForm.controls['password'].valid){
+        this.alerts.showError('Error','Contraseña Invalida, debe tener almenos 8 caracteres')
+      }
+      else{
+        this.alerts.showError('Error','Datos Incorrectos')
+      }
+      
     }
   }
 
