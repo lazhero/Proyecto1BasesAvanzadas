@@ -5,17 +5,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
+import { StudentViewModule } from './modules/student-view/student-view.module';
+import { DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    StudentViewModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
