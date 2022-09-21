@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CdkDragDropDisabledSortingExample } from './clubs-list/clubs-list.component';
+import { ClubsListComponent } from './clubs-list/clubs-list.component';
 
 const routes: Routes = [
-  {path:'clubs',component:CdkDragDropDisabledSortingExample}
+  {path:'clubs',component:ClubsListComponent}
 ];
 
 @NgModule({

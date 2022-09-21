@@ -2,20 +2,32 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StudentViewRoutingModule } from './student-view-routing.module';
-import { CdkDragDropDisabledSortingExample} from './clubs-list/clubs-list.component';
-import { DragDropModule} from '@angular/cdk/drag-drop';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+import { ClubsListComponent } from './clubs-list/clubs-list.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    CdkDragDropDisabledSortingExample
+  declarations:[
+    ClubsListComponent,
+    DialogComponent
   ],
+  
   imports: [
     CommonModule,
     StudentViewRoutingModule,
-    DragDropModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-
-  bootstrap: [CdkDragDropDisabledSortingExample]
+  bootstrap:[ClubsListComponent]
 })
 export class StudentViewModule { }

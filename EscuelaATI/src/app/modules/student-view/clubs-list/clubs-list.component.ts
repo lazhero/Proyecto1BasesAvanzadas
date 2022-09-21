@@ -1,30 +1,21 @@
 import {Component} from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 /**
  * @title Drag&Drop disabled sorting
  */
 @Component({
-  selector: 'cdk-drag-drop-disabled-sorting-example',
+  selector: 'clubs-list-component',
   templateUrl: './clubs-list.component.html',
   styleUrls: ['./clubs-list.component.css'],
 })
-export class CdkDragDropDisabledSortingExample {
-  items = ['Natación', 'Ajedrez', 'Ballet', 'Pintura', 'Manualidades'];
+export class ClubsListComponent {
 
-  basket = [];
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
+  constructor(private dialog : MatDialog){}
+  openDialog() {
+    this.dialog.open(DialogComponent, {
+      width: '30%'
+    });
   }
 }
 
