@@ -1,0 +1,24 @@
+{
+  "clubsList": [
+    {
+      "clubName": "danza",
+      "category": "Artes",
+      "id": 1
+    },
+    {
+      "clubName": "pintura",
+      "category": "Artes",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
