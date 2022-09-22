@@ -14,7 +14,7 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./clubs-list.component.css'],
 })
 export class ClubsListComponent implements OnInit {
-  displayedColumns: string[] = ['clubName', 'category'];
+  displayedColumns: string[] = ['clubName', 'category', 'favorites'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -43,6 +43,10 @@ export class ClubsListComponent implements OnInit {
         alert("Error obteniendo los datos")
       }
     })
+  }
+
+  addToFavorites(){
+    console.log("Se agregó a favoritos")
   }
 
   applyFilter(event: Event) {
