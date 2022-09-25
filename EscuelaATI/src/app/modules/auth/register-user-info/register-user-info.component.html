@@ -18,13 +18,12 @@
     </div>
     <div class="row">
         <div class="row25">
-            <label>Correo</label>
+            <label>Usuario</label>
         </div>
         <div class="row75">
             <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
-                <input formControlName="email">
-                <label class="warning" *ngIf="userInfoForm.get('email').hasError('required')">El correo no puede ser vacio</label>
-                <label class="warning" *ngIf="userInfoForm.get('email').hasError('email') &&  !userInfoForm.get('email').hasError('required')">No cumple con formato correo</label>
+                <input formControlName="user">
+                <label class="warning" *ngIf="userInfoForm.get('user').hasError('required')">El usuario no puede ser vacio</label>
             </div>
         </div>
 
