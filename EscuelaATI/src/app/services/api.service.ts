@@ -22,4 +22,10 @@ export class ApiService {
   addClub(data:any){
     return this.http.post_request('Club',data)
   }
+  getTopClubs(){
+    return this.http.get_request('Club/ByTop5Clubs',{})
+  }
+  getBottomClubs(){
+    return this.http.get_request('Club/ByBottom3Clubs',{})
+  }
 }

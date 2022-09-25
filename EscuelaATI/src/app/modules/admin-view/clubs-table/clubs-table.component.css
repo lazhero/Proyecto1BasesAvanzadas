@@ -1,0 +1,25 @@
+.pageDiv{
+    width: 80%;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    margin-left: auto;
+    margin-right:auto;
+}
+.paginator{
+    width: 100%;
+   
+}
+table{
+    width: 100%;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 4vh;
+}
+td, th {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
