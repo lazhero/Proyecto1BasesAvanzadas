@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClubsListComponent } from './clubs-list/clubs-list.component';
 
 const routes: Routes = [
-  {path:'clubs',component:ClubsListComponent}
+  {path:'clubs',component:ClubsListComponent},
+  {path:'',redirectTo:'clubs',pathMatch:'full'}
 ];
 
 @NgModule({

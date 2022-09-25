@@ -17,7 +17,7 @@ export class ApiService {
     return this.http.get_request('clubsList',{})
   }
   register(data:any){
-    return this.http.post_request('user',data)
+    return this.http.post_request('User',data)
   }
   addClub(data:any){
     return this.http.post_request('Club',data)
@@ -27,5 +27,8 @@ export class ApiService {
   }
   getBottomClubs(){
     return this.http.get_request('Club/ByBottom3Clubs',{})
+  }
+  userLogin(data:any){
+    return this.http.get_request('User/Login',data)
   }
 }
