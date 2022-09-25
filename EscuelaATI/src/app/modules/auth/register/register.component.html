@@ -1,16 +1,17 @@
-<mat-stepper class="squareBoxDiv" [linear]="true" #stepper>
+<mat-stepper class="squareBoxDiv" [linear]="false" #stepper>
     <mat-step [stepControl]="stepOne()">
         <app-register-user-info #info>
 
         </app-register-user-info>
     </mat-step>
-    <mat-step>
-        <label>Hola</label>
+    <mat-step [stepControl]="stepTwo()">
+        <app-register-club #club></app-register-club>
     </mat-step>
    
 
 </mat-stepper>
 <div class="buttonsDiv">
     <button class="stepperButton" (click)="goBack()" [disabled]="isFirst()">Atras</button>
-    <button class="stepperButton" (click)="goForward()" [disabled]="isLast()">Adelante</button>
+    <button class="stepperButton" (click)="goForward()" [disabled]="isLast()" *ngIf="!isLast()">Adelante</button>
+    <button class="stepperButton" (click)="submit()" [disabled]="!isLast()" *ngIf="isLast()">Finalizar</button>
 </div>

@@ -3,16 +3,27 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './register/register.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { RegisterUserInfoComponent } from './register-user-info/register-user-info.component';
+import { StudentViewModule } from '../student-view/student-view.module';
+import { RegisterClubComponent } from './register-club/register-club.component';
+import {MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';;
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    RegisterUserInfoComponent
+    RegisterUserInfoComponent,
+    RegisterClubComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +31,16 @@ import { RegisterUserInfoComponent } from './register-user-info/register-user-in
     FlexLayoutModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatStepperModule
+    MatStepperModule,
+    StudentViewModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class AuthModule { }

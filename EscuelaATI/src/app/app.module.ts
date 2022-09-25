@@ -16,10 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { RegisterClubComponent } from './auth/register-club/register-club.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterClubComponent,
   ],
   imports: [
     BrowserModule,

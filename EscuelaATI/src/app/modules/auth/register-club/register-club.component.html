@@ -1,0 +1,69 @@
+
+<form class="myform" [formGroup]="clubForm">
+  <div class="row">
+    <label>Mi Primer Club</label>
+    <input formControlName="club">
+  </div>
+  <div class="row">
+    <label>Categoria</label>
+    <select formControlName="category">
+      <option>artes</option>
+      <option>deportes</option>
+      <option>idiomas</option>
+      <option>otros</option>
+
+    </select>
+
+  </div>
+  
+</form>
+    
+
+  
+  <div class="container">
+    <div style="margin-top: 20px;">
+      <mat-form-field appearance="standard">
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Nombre del club" #input>
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- Club name Column -->
+          <ng-container matColumnDef="clubName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del club </th>
+            <td mat-cell *matCellDef="let row"> {{row.clubName}} </td>
+          </ng-container>
+      
+          <!-- Category Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>
+            <td mat-cell *matCellDef="let row"> {{row.category}} </td>
+          </ng-container>
+  
+          <!-- Favorite Column -->
+          <ng-container matColumnDef="favorites">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Favoritos </th>
+            <td mat-cell *matCellDef="let row"> 
+              <button mat-icon-button color="primary" (click)="addToFavorites()">
+                <mat-icon>grade</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+        
+    </div>
+  </div>
+  

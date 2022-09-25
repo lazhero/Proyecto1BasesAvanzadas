@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { MatDialogRef} from '@angular/material/dialog'
-
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-
   clubForm!: FormGroup
   constructor(private formBuilder: FormBuilder, private api: ApiService, private dialogRef:MatDialogRef<DialogComponent>) { }
 

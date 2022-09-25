@@ -36,6 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSortModule,
     MatIconModule
   ],
+  exports:[ClubsListComponent],
   bootstrap:[ClubsListComponent]
 })
 export class StudentViewModule { }

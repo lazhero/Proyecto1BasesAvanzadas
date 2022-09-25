@@ -1,22 +1,26 @@
 import {Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
-import { DialogComponent } from '../dialog/dialog.component';
+
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-/**
- * @title Drag&Drop disabled sorting
- */
+import { FormControl,FormGroup, Validators } from '@angular/forms';
 @Component({
-  selector: 'clubs-list-component',
-  templateUrl: './clubs-list.component.html',
-  styleUrls: ['./clubs-list.component.css'],
+  selector: 'app-register-club',
+  templateUrl: './register-club.component.html',
+  styleUrls: ['./register-club.component.css']
 })
-export class ClubsListComponent implements OnInit {
+export class RegisterClubComponent implements OnInit {
+
   displayedColumns: string[] = ['clubName', 'category', 'favorites'];
   dataSource!: MatTableDataSource<any>;
-
+  clubForm:FormGroup=new FormGroup(
+    {
+      club:new FormControl('',[Validators.required]),
+      category:new FormControl('',[Validators.required])
+    }
+  )
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -27,12 +31,7 @@ export class ClubsListComponent implements OnInit {
     this.getAllClubs();
   }
 
-  openDialog() {
-    this.dialog.open(DialogComponent, {
-      width: '30%'
-    })
 
-  }
   getAllClubs(){
     this.api.getClub()
     .subscribe({
@@ -59,5 +58,8 @@ export class ClubsListComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-}
+  add(){
 
+  }
+
+}
