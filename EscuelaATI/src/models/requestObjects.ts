@@ -3,3 +3,9 @@ export interface ClubsRankingInterface{
     Category:string;
     Amount:number;
 }
+export interface UserInterface{
+    Username:string;
+    Password:string;
+    UserType:string;
+    Location:string;
+}
