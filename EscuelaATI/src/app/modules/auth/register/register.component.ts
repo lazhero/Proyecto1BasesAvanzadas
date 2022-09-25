@@ -47,6 +47,7 @@ export class RegisterComponent implements OnInit {
           Password: form1.controls['password'].value,
           Name: form1.controls['name'].value,
           Section: form1.controls['class'].value,
+          Location:form1.controls['location'].value,
           UserType: 'Student'
         }
       ).subscribe((

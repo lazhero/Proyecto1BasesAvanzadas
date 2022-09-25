@@ -48,11 +48,38 @@
         </div>
         <div class="row75">
             <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
-                <select formControlName="class"></select>
+                <select formControlName="class">
+                    <option>7A</option>
+                    <option>7B</option>
+                    <option>7C</option>
+                    <option>8A</option>
+                    <option>8B</option>
+                    <option>8C</option>
+                    <option>9A</option>
+                    <option>9B</option>
+                    <option>9C</option>
+                </select>
                 
             </div>
         </div>
 
+    </div>
+    <div class="row">
+        <div class="row25">
+            <label>Sede</label>
+        </div>
+        <div class="row75">
+            <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
+                <select formControlName="location">
+                    <option>Lugar 1</option>
+                    <option>Lugar 2</option>
+                    <option>Lugar 3</option>
+                </select>
+                <label class="warning" *ngIf="userInfoForm.get('location').hasError('required')">Debe elegir una sede</label>
+                
+            </div>
+        </div>
+        
     </div>
     
 </form>
