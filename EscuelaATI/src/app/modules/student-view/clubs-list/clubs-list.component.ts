@@ -30,6 +30,8 @@ export class ClubsListComponent implements OnInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
       width: '30%'
+    }).afterClosed().subscribe(()=>{
+      this.getAllClubs();
     })
 
   }
