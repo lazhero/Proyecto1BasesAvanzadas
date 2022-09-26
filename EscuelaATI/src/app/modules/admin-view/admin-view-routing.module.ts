@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'top',component:TopClubsComponent},
   {path:'bottom',component:BottomClubsComponent},
   {path:'total',component:TotalClubsComponent},
-  {path:'topStudents',component:TopStudentsComponent}
+  {path:'topStudents',component:TopStudentsComponent},
+  {path:'', redirectTo:'total', pathMatch:'full'}
 ];
 
 @NgModule({

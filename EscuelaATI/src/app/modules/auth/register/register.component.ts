@@ -55,27 +55,35 @@ export class RegisterComponent implements OnInit {
         password: form1.controls['password'].value,
         name: form1.controls['name'].value,
         classNum: form1.controls['class'].value,
-        locale:form1.controls['location'].value,
-        userType: 'Student'
+        locale:parseInt(form1.controls['location'].value),
+        userType: 'Student',
+        id:'0'
       }
 
       var firstClub={
-        name: form2.controls['club'],
-        category: form2.controls['category'],
-        locale:form1.controls['location'].value 
+        name: form2.controls['club'].value,
+        category: form2.controls['category'].value,
+        locale:parseInt(form1.controls['location'].value),
+        id:'0',
+        creatorId:''
       }
+      var data= {
+        club:firstClub,
+        user:user
+      }
+      console.log(data)
       this.api.register(
-        {
-          club:firstClub,
-          user:user
-        }
-      ).subscribe((
-        (value:any)=>{
+        data
+      ).subscribe({
+        next:(value:any)=>{
           this.redirect.redirect('/auth/login')
           this.api.addClub(firstClub)
+        },
+        error:(err)=>{
+          console.log(err)
         }
 
-      ))
+      })
     }
 
   }

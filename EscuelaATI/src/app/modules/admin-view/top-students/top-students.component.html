@@ -11,14 +11,14 @@
       
           <!-- student name Column -->
           <ng-container matColumnDef="studentName">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad de Clubes </th>
-            <td mat-cell *matCellDef="let row"> {{row.studentName}} </td>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del estudiante </th>
+            <td mat-cell *matCellDef="let row"> {{row.Name}} </td>
           </ng-container>
       
-          <!-- Category Column -->
+          <!-- Amount Column -->
           <ng-container matColumnDef="totalClubs">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>
-            <td mat-cell *matCellDef="let row"> {{row.totalClubs}} </td>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad de Clubes </th>
+            <td mat-cell *matCellDef="let row"> {{row.Amount}} </td>
           </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

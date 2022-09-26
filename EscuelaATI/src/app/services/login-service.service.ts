@@ -10,12 +10,15 @@ export class LoginServiceService {
   constructor() { }
 
   login(user:UserInterface){
+    localStorage.setItem('user', JSON.stringify(user));
     this.logged=user;
   }
   logout(){
+    localStorage.setItem('user',null);
     this.logged=null;
   }
   getUser():UserInterface{
-    return this.logged
+    return JSON.parse(localStorage.getItem('user'));
+    
   }
 }

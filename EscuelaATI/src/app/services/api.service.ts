@@ -14,7 +14,8 @@ export class ApiService {
   postClub(data:any){
     var user=this.login.getUser()
     data.creatorId=user.id;
-    data.locale=user.locale
+    data.locale=user.locale;
+    data.id = '';
     return this.http.post_request('Club',data)
   }
   getClub(){
@@ -48,6 +49,7 @@ export class ApiService {
     return this.http.get_request('User/Login',data)
   }
   getClubsByCategory(){
+    console.log(this.login.getUser())
     var location = this.login.getUser().locale
     return this.http.get_request('Club/Category', {locale:location}) 
   }

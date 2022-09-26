@@ -13,7 +13,7 @@ import { FormControl,FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterClubComponent implements OnInit {
 
-  displayedColumns: string[] = ['clubName', 'category', 'favorites'];
+  displayedColumns: string[] = ['clubName', 'category'];
   dataSource!: MatTableDataSource<any>;
   location:number=0;
   clubForm:FormGroup=new FormGroup(
