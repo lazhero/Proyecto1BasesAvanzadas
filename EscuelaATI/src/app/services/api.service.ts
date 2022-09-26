@@ -12,36 +12,42 @@ export class ApiService {
   constructor(private http:NetworkService, private login:LoginServiceService) {}
 
   postClub(data:any){
-    return this.http.post_request('clubsList',data)
+    var user=this.login.getUser()
+    data.creatorId=user.id;
+    data.locale=user.locale
+    return this.http.post_request('Club',data)
   }
   getClub(){
-    var location = this.login.getUser().Location
-    return this.http.get_request('clubsList',{location:location})
+    var location = this.login.getUser().locale
+    return this.http.get_request('Club/All',{locale:location})
   }
   register(data:any){
+
     return this.http.post_request('User',data)
   }
   addClub(data:any){
+    var user=this.login.getUser()
+    data.locale=user.locale
     return this.http.post_request('Club',data)
   }
   getTopClubs(){
-    var location = this.login.getUser().Location
-    return this.http.get_request('Club/ByTop5Clubs',{location:location})
+    var location = this.login.getUser().locale
+    return this.http.get_request('Club/ByTop5Clubs',{locale:location})
   }
   getBottomClubs(){
-    var location = this.login.getUser().Location
-    return this.http.get_request('Club/ByBottom3Clubs',{location:location})
+    var location = this.login.getUser().locale
+    return this.http.get_request('Club/ByBottom3Clubs',{locale:location})
   }
   userLogin(data:any){
     return this.http.get_request('User/Login',data)
   }
   getClubsByCategory(){
-    var location = this.login.getUser().Location
-    return this.http.get_request('Club/Category', {location:location}) //poner el del api
+    var location = this.login.getUser().locale
+    return this.http.get_request('Club/Category', {locale:location}) 
   }
 
   getTop3Students(){
-    var location = this.login.getUser().Location
-    return this.http.get_request('Club/Category', {location:location}) //poner el del api
+    var location = this.login.getUser().locale
+    return this.http.get_request('Club/Category', {locale:location}) 
   }
 }

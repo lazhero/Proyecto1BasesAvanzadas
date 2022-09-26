@@ -20,7 +20,11 @@ export class DialogComponent implements OnInit {
 
   addClub(){
     if(this.clubForm.valid){
-      this.api.postClub(this.clubForm.value).subscribe({
+      var data={
+        name:this.clubForm.controls['clubName'].value,
+        category: this.clubForm.controls['category'].value
+      }
+      this.api.postClub(data).subscribe({
         next:(res)=>{
           alert("Club agregado");
           this.clubForm.reset();

@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       this.api.userLogin(loginData).subscribe(
         (user:UserInterface)=>{
           this.logService.login(user);
-          var UserType:string=user.UserType;
+          var UserType:string=user.userType;
           if(UserType=='Student'){
             this.redirect.redirect('/student')
           }

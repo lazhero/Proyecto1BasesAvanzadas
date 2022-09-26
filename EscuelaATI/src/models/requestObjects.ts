@@ -4,8 +4,9 @@ export interface ClubsRankingInterface{
     Amount:number;
 }
 export interface UserInterface{
-    Username:string;
-    Password:string;
-    UserType:string;
-    Location:string;
+    id:string;
+    username:string;
+    password:string;
+    userType:string;
+    locale:string;
 }
