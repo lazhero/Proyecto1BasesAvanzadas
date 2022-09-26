@@ -18,14 +18,15 @@ export class RegisterComponent implements OnInit {
   constructor(private api:ApiService, private redirect:RedirectService) { }
 
   ngOnInit(): void {
-    this.step1.userInfoForm.get('location').valueChanges.subscribe(
-      (value:number)=>{
+    this.stepOne().controls['location'].valueChanges.subscribe(
+      (value)=>{
         this.location=value;
         this.step2.setLocation(this.location)
         this.step2.getAllClubs()
       }
     )
   }
+
   stepOne(){
     return this.step1.userInfoForm;
   }
