@@ -14,7 +14,7 @@ export class RegisterUserInfoComponent implements OnInit {
     this.userInfoForm=new FormGroup(
       {
         name:new FormControl('',[Validators.required]),
-        user:new FormControl('',[Validators.required]),
+        username:new FormControl('',[Validators.required]),
         password:new FormControl('',[Validators.required,Validators.minLength(8)]),
         class:new FormControl('',[]),
         location:new FormControl('',[Validators.required])

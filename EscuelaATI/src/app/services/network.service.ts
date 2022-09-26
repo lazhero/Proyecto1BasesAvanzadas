@@ -8,7 +8,7 @@ import { HttpParams } from '@angular/common/http';
 export class NetworkService {
 
   constructor(private http:HttpClient) { }
-  serverIp: string = 'https://localhost:7282/';
+  serverIp: string = 'https://localhost:7011/';
 
   get_request(url: string, Params: any): Observable<any> {
     var http_params = new HttpParams({ fromObject: Params });
