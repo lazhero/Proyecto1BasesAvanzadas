@@ -15,6 +15,7 @@ export class RegisterClubComponent implements OnInit {
 
   displayedColumns: string[] = ['clubName', 'category', 'favorites'];
   dataSource!: MatTableDataSource<any>;
+  location:number=0;
   clubForm:FormGroup=new FormGroup(
     {
       club:new FormControl('',[Validators.required]),
@@ -33,7 +34,7 @@ export class RegisterClubComponent implements OnInit {
 
 
   getAllClubs(){
-    this.api.getClub()
+    this.api.getClubLocation(this.location)
     .subscribe({
       next:(res)=>{
         this.dataSource = new MatTableDataSource(res);
@@ -60,6 +61,9 @@ export class RegisterClubComponent implements OnInit {
   }
   add(){
 
+  }
+  setLocation(location){
+    this.location=location
   }
 
 }

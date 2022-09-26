@@ -21,6 +21,10 @@ export class ApiService {
     var location = this.login.getUser().locale
     return this.http.get_request('Club/All',{locale:location})
   }
+  getClubLocation(location){
+    return this.http.get_request('Club/All',{locale:location})
+
+  }
   register(data:any){
 
     return this.http.post_request('User',data)
