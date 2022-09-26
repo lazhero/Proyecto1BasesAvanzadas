@@ -36,12 +36,13 @@ export class ClubsListComponent implements OnInit {
 
   }
   getAllClubs(){
-    this.api.getClub()
+    this.api.getClubByStudents()
     .subscribe({
       next:(res)=>{
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        console.log(res)
       },
       error:(err)=>{
         alert("Error obteniendo los datos")
@@ -49,8 +50,21 @@ export class ClubsListComponent implements OnInit {
     })
   }
 
-  addToFavorites(){
-    console.log("Se agregó a favoritos")
+  addToFavorites(row){
+    
+      var data={
+        name:row.name,
+        category: row.category
+      }
+      this.api.postClub(data).subscribe({
+        next:(res)=>{
+          alert("Club agregado a favoritos");
+          this.getAllClubs();
+        },
+        error:()=>{
+          alert("Error al agregar el club a favoritos")
+        }
+      })
   }
 
   applyFilter(event: Event) {

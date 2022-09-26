@@ -10,3 +10,24 @@ table {
   font-size: 14px;
   width: 100%;
 }
+
+.title{
+  display: block;
+  text-align: center;
+  font-family: serif;
+  font-weight: bold;
+  font-size:5vh;
+  margin-bottom:3vh;
+  margin-top:3vh;
+}
+
+table{
+  width: 100%;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 4vh;
+}
+td, th {
+  text-align: center !important;
+  vertical-align: middle !important;
+}

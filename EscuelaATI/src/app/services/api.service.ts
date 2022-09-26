@@ -56,6 +56,12 @@ export class ApiService {
 
   getTop3Students(){
     var location = this.login.getUser().locale
-    return this.http.get_request('Club/Category', {locale:location}) 
+    return this.http.get_request('Club/ByTop3Students', {locale:location}) 
+  }
+
+  getClubByStudents(){
+    var location = this.login.getUser().locale
+    var id = this.login.getUser().id
+    return this.http.get_request('Vote/RegistedClubs', {locale:location, id:id})
   }
 }
