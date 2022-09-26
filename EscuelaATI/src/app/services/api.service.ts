@@ -26,8 +26,10 @@ export class ApiService {
     return this.http.post_request('User',data)
   }
   addClub(data:any){
-    var user=this.login.getUser()
-    data.locale=user.locale
+    if(data.locale==null){
+      var user=this.login.getUser()
+      data.locale=user.locale
+    }
     return this.http.post_request('Club',data)
   }
   getTopClubs(){

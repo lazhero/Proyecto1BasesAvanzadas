@@ -70,9 +70,9 @@
         <div class="row75">
             <div fxLayout="column" fxLayoutAlign="center flex-start" style="width:100%;">
                 <select formControlName="location">
-                    <option>Lugar 1</option>
-                    <option>Lugar 2</option>
-                    <option>Lugar 3</option>
+                    <option value="0">Lugar 1</option>
+                    <option value="1">Lugar 2</option>
+                    <option value="2">Lugar 3</option>
                 </select>
                 <label class="warning" *ngIf="userInfoForm.get('location').hasError('required')">Debe elegir una sede</label>
                 

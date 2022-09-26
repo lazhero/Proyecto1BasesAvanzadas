@@ -1,6 +1,7 @@
 import { Component, OnInit ,ViewChild} from '@angular/core';
 import { MatStepper } from '@angular/material/stepper';
 import { ApiService } from 'src/app/services/api.service';
+import { RedirectService } from 'src/app/services/redirect.service';
 import { RegisterClubComponent } from '../register-club/register-club.component';
 import { RegisterUserInfoComponent } from '../register-user-info/register-user-info.component';
 @Component({
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   @ViewChild('club',{static:true}) step2:RegisterClubComponent;
 
 
-  constructor(private api:ApiService) { }
+  constructor(private api:ApiService, private redirect:RedirectService) { }
 
   ngOnInit(): void {
   }
@@ -41,22 +42,28 @@ export class RegisterComponent implements OnInit {
     if(this.stepTwo().valid){
       var form1=this.stepOne()
       var form2=this.stepTwo()
+      var user = {
+        username:  form1.controls['user'].value,
+        password: form1.controls['password'].value,
+        name: form1.controls['name'].value,
+        classNum: form1.controls['class'].value,
+        locale:form1.controls['location'].value,
+        userType: 'Student'
+      }
+
+      var firstClub={
+        name: form2.controls['club'],
+        category: form2.controls['category'],
+        locale:form1.controls['location'].value 
+      }
       this.api.register(
         {
-          username:  form1.controls['user'].value,
-          password: form1.controls['password'].value,
-          name: form1.controls['name'].value,
-          classNum: form1.controls['class'].value,
-          locale:form1.controls['location'].value,
-          userType: 'Student'
+          club:firstClub,
+          user:user
         }
       ).subscribe((
         (value:any)=>{
-          var firstClub={
-            name: form2.controls['club'],
-            category: form2.controls['category'],
-            creatorId: value.Id
-          }
+          this.redirect.redirect('/auth/login')
           this.api.addClub(firstClub)
         }
 

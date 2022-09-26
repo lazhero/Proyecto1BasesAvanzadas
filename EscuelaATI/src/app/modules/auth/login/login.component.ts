@@ -26,13 +26,16 @@ export class LoginComponent implements OnInit {
   }
 
   log(){
-    if(!this.loginForm.valid){
+    
+    if(this.loginForm.valid){
+      
       var loginData={
         username:this.loginForm.controls['username'].value,
         password:this.loginForm.controls['password'].value
       }
       this.api.userLogin(loginData).subscribe(
         (user:UserInterface)=>{
+          console.log(user)
           this.logService.login(user);
           var UserType:string=user.userType;
           if(UserType=='Student'){
