@@ -27,7 +27,7 @@ export class RegisterClubComponent implements OnInit {
   constructor(private dialog : MatDialog, private api: ApiService){}
 
   ngOnInit():void{
-    
+    console.log(this.api)
     this.getAllClubs();
   }
 

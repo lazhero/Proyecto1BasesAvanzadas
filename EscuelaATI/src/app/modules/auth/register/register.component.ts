@@ -43,12 +43,12 @@ export class RegisterComponent implements OnInit {
       var form2=this.stepTwo()
       this.api.register(
         {
-          Username:  form1.controls['user'].value,
-          Password: form1.controls['password'].value,
-          Name: form1.controls['name'].value,
-          Section: form1.controls['class'].value,
-          Location:form1.controls['location'].value,
-          UserType: 'Student'
+          username:  form1.controls['user'].value,
+          password: form1.controls['password'].value,
+          name: form1.controls['name'].value,
+          classNum: form1.controls['class'].value,
+          locale:form1.controls['location'].value,
+          userType: 'Student'
         }
       ).subscribe((
         (value:any)=>{
