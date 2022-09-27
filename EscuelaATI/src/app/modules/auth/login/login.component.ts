@@ -34,19 +34,20 @@ export class LoginComponent implements OnInit {
         password:this.loginForm.controls['password'].value
       }
       this.api.userLogin(loginData).subscribe(
-        (user:UserInterface)=>{
-          console.log(user)
-          this.logService.login(user);
-          var UserType:string=user.userType;
-          if(UserType=='Student'){
-            this.redirect.redirect('/student')
-          }
-          else{
-            this.redirect.redirect('/admin')
-          }
-        },
-        ()=>{
-          this.alerts.showError('Error','No ha sido posible iniciar sesion')
+        {
+          next:(user:UserInterface)=>{
+            console.log(user)
+            this.logService.login(user);
+            var UserType:string=user.userType;
+            if(UserType=='Student'){
+              this.redirect.redirect('/student')
+            }
+            else{
+              this.redirect.redirect('/admin')
+            }
+          },
+          error:()=>{this.alerts.showError('Error','No ha sido posible iniciar sesion');}
+
         }
       )
       
@@ -55,3 +56,5 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+
